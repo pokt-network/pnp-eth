@@ -22,21 +22,40 @@ module.exports.submitTransaction = async function(serializedTx, opts) {
       networkId = parsedOpts.networkId,
       web3 = new Web3(new Web3.providers.HttpProvider(ethNode)),
       serializedTx = serializedTx.startsWith('0x') ? serializedTx : ('0x' + serializedTx),
-      txHash = await web3.eth.sendRawTransaction(serializedTx);
+      txHash = null,
+      error = null;
+
+  try {
+    txHash = await web3.eth.sendRawTransaction(serializedTx)
+  } catch (e) {
+    console.error(e);
+    txHash = null;
+    error = 'Failed to submit transaction';
+  }
 
   return {
     hash: txHash,
     metadata: {},
-    error: null
+    error: error
   };
 }
 
 module.exports.verifyTransaction = async function(txHash, opts) {
   var parsedOpts = parseOpts(opts),
       web3 = new Web3(new Web3.providers.HttpProvider(ethNode)),
-      txReceipt = await web3.eth.getTransactionReceipt(txHash),
-      txVerifiable = txReceipt ? true : false,
-      result = txVerifiable && txReceipt.status === '0x1' ? true : false;
+      txReceipt = null,
+      txVerifiable = false,
+      result = false;
+
+  try {
+    txReceipt = await web3.eth.getTransactionReceipt(txHash),
+    txVerifiable = txReceipt ? true : false,
+    result = txVerifiable && txReceipt.status === '0x1' ? true : false;
+  } catch (e) {
+    console.error(e);
+    txVerifiable = false;
+    result = false;
+  }
 
   return {
     tx_verifiable: txVerifiable,
