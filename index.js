@@ -26,7 +26,7 @@ module.exports.submitTransaction = async function(serializedTx, opts) {
       error = null;
 
   try {
-    txHash = await web3.eth.sendRawTransaction(serializedTx)
+    txHash = await web3.eth.sendRawTransaction(serializedTx);
   } catch (e) {
     console.error(e);
     txHash = null;
@@ -48,8 +48,8 @@ module.exports.verifyTransaction = async function(txHash, opts) {
       result = false;
 
   try {
-    txReceipt = await web3.eth.getTransactionReceipt(txHash),
-    txVerifiable = txReceipt ? true : false,
+    txReceipt = await web3.eth.getTransactionReceipt(txHash);
+    txVerifiable = txReceipt ? true : false;
     result = txVerifiable && txReceipt.status === '0x1' ? true : false;
   } catch (e) {
     console.error(e);
