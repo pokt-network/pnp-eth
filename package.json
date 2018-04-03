@@ -1,0 +1,23 @@
+{
+  "name": "pnp-eth",
+  "version": "0.0.1",
+  "description": "An Ethereum Plugin for the Pocket Node app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pokt-network/pnp-eth.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pokt-network/pnp-eth/issues"
+  },
+  "homepage": "https://github.com/pokt-network/pnp-eth#readme",
+  "dependencies": {
+    "npm": "^5.8.0",
+    "web3": "^0.20.x"
+  }
+}
