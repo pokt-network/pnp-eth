@@ -1,6 +1,6 @@
 {
   "name": "pnp-eth",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An Ethereum Plugin for the Pocket Node app.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/pokt-network/pnp-eth#readme",
   "dependencies": {
-    "npm": "^5.8.0",
-    "web3": "^0.20.x"
+    "web3": "^0.20.x",
+    "ethereumjs-abi": "^0.6.x"
   }
 }
