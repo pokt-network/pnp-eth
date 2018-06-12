@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/pokt-network/pnp-eth.git"
   },
-  "author": "",
+  "author": "Luis C. de Leon <luis@pokt.network>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pokt-network/pnp-eth/issues"
