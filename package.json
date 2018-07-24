@@ -1,6 +1,6 @@
 {
   "name": "pnp-eth",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An Ethereum Plugin for the Pocket Node app.",
   "main": "index.js",
   "scripts": {
