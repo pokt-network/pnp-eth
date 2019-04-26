@@ -1,3 +1,6 @@
+# NOTE:
+This repository has been deprecated, please visit the Pocket Core repository for the latest on Pocket development.
+
 # pnp-eth
 An Ethereum Plugin for the Pocket Node app.
 
